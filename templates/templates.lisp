@@ -34,3 +34,19 @@
     (:header (:h1 title))
     (:section (:raw body-html))))
 
+(defun home-page (&key title description type twitter posts body-html &allow-other-keys)
+  (with-page-string (:title title :type type :twitter twitter :description description)
+    (:header (:h1 title))
+    (:section
+     (:div
+      :class "posts"
+      :style "width: 250px; float: right; border: 1; padding: 20"
+      (dolist (post posts)
+	(let ((post-vars (cdr post)))
+	  (:div
+	   :class "post"
+	   (:a
+	    :href (cdr (assoc "link" post-vars :test #'equal))
+	    (:h3 (cdr (assoc "title" post-vars :test #'equal))))
+	   (:em (cdr (assoc "description" post-vars :test #'equal)))))))
+     (:raw body-html))))

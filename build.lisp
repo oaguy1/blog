@@ -12,7 +12,7 @@
 
 (exclude-file "README.md")
 
-(register-template "page" #'templates::page)
+(register-template "page" #'templates::home-page)
 (register-template "post" #'templates::post)
 
 (make-site "." "../blog-output/")
