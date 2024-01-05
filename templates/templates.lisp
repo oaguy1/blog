@@ -9,6 +9,7 @@
       (:html
         (:head
          (:title ,title)
+	 (:link :rel "stylesheet" :href "/assets/default.css")
 	 (:meta :name "description" :content ,description)
 	 (:meta :name "og:type" :content ,type)
 	 (:meta :name "og:title" :content ,title)
