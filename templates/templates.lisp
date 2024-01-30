@@ -1,5 +1,5 @@
 (defpackage #:templates
-  (:use #:cl #:cl-yassg #:spinneret))
+  (:use #:cl #:cl-yassg #:spinneret :local-time))
 
 (in-package #:templates)
 
@@ -11,6 +11,7 @@
          (:title (format nil "Lily Hughes-Robinson - ~A" ,title))
 	 (:link :rel "stylesheet" :href "/assets/default.css")
          (:link :rel "stylesheet" :href "https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css")
+	 (:script :src "https://kit.fontawesome.com/f0c62b9eac.js" :crossorigin "anonymous")
 	 (:meta :charset "utf-8")
 	 (:meta :name "viewport" :content "width=device-width, initial-scale=1")
 	 (:meta :name "description" :content ,description)
@@ -22,15 +23,18 @@
 	 (:meta :name "twitter:creator" :content ,twitter)
 	 (:meta :name "twitter:title" :content ,title)
 	 (:meta :name "twitter:description" :content ,description))
-	(:main
-	 :class "container"
-	 (:nav
-	  (:ul
-	   (:li (:strong "Lily Hughes-Robinson")))
-	  (:ul
-	   (:li (:a :href "/" "Home"))
-	   (:li (:a :href "/about.html" "About"))))
-	 (:body ,@body)))))
+	(:body
+	 (:main
+	  :class "container"
+	  (:nav
+	   (:ul
+	    (:li (:strong "Lily Hughes-Robinson")))
+	   (:ul
+	    (:li (:a :href "/" "Home"))
+	    (:li (:a :href "/about.html" "About"))
+	    (:li (:a :href "https://tech.lgbt/@Lilaclily" (:i :class "fa-brands fa-mastodon")))
+	    (:li (:a :href "https://github.com/oaguy1" (:i :class "fa-brands fa-github")))))
+	  ,@body)))))
 
 (defun post (&key title description type twitter body-html date &allow-other-keys)
   (with-page-string (:title title :type type :twitter twitter :description description)
@@ -48,17 +52,19 @@
     (:section (:raw body-html))))
 
 (defun home-page (&key title description type twitter posts body-html &allow-other-keys)
-  (with-page-string (:title title :type type :twitter twitter :description description)
-    (:h1 title)
-    (:raw body-html)
-    (:section
-     (:h2 "Posts")
-     (dolist (post posts)
-       (let ((post-vars (cdr post)))
-	 (:section
-	  (:hgroup
-	   (:a
-	    :href (cdr (assoc "link" post-vars :test #'equal))
-	    (:strong (cdr (assoc "title" post-vars :test #'equal))))
-	   (:br)
-	   (:em (cdr (assoc "description" post-vars :test #'equal))))))))))
+  (let ((sorted-posts (sort posts #'local-time:timestamp> :key #'(lambda (x) (local-time:parse-timestring (cdr (assoc "date" (cdr x) :test #'equal)))))))
+    (with-page-string (:title title :type type :twitter twitter :description description)
+      (:h1 title)
+      (:raw body-html)
+      (:section
+       (:h2 "Posts")
+       (dolist (post sorted-posts)
+	 (let ((post-vars (cdr post)))
+	   (:article
+	    (:a
+	     :href (cdr (assoc "link" post-vars :test #'equal))
+	     (:strong (cdr (assoc "title" post-vars :test #'equal))))
+	    " • "
+	    (cdr (assoc "date" post-vars :test #'equal))
+	    (:br)
+	    (:em (cdr (assoc "description" post-vars :test #'equal))))))))))
