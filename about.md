@@ -4,13 +4,13 @@ author: Lily Hughes-Robinson
 template: page
 ---
 
-Lily Hughes-Robinson is a highly accomplished software engineer  skilled in full stack web development and LLM based application development.  She has extensive experience spearheading product planning, software architecture, and owning critical applications.
+Lily Hughes-Robinson is a highly accomplished software engineer skilled in full-stack web development and LLM-based application development. She has extensive experience spearheading product planning, software architecture, and owning critical applications.
 
-She has delivered conversational agents utilizing large language models and pioneered reusable libraries for question answering services. Lily has collaborated with senior leaders, product managers, and cross-functional teams to engineer chatbots, perform data analysis, and guide major firm-wide initiatives. As a full stack engineer, she has developed enterprise applications and reporting dashboards using React, Django, Connexion, and other technologies.
+She has delivered conversational agents utilizing large language models and pioneered reusable libraries for question answering services. Lily has collaborated with senior leaders, product managers, and cross-functional teams to engineer chatbots, perform data analysis, and guide major firm-wide initiatives. As a full-stack engineer, she has developed enterprise applications and reporting dashboards using React, Django, Connexion, and other technologies.
 
-In addition to her professional work, Lily also serves as an event coordinator for a diversity, equity and inclusion community focused on expanding support for transgender and gender expansive individuals.
+In addition to her professional work, Lily also serves as an event coordinator for a diversity, equity, and inclusion community focused on expanding support for transgender and gender-expansive individuals.
 
-While in college, she studied Computer Science and graduated with honors from Clark University. She has advanced knowledge of programming languages like Python and JavaScript as well as experience working with databases, cloud platforms and DevOps tools. Her background spans both technical depth and leadership capabilities.
+While in college, she studied Computer Science and graduated with honors from Clark University. She has advanced knowledge of programming languages like Python and JavaScript, as well as experience working with databases, cloud platforms, and DevOps tools. Her background spans both technical depth and leadership capabilities.
 
 When Lily isn't coding or writing, she spends time with her family in Brooklyn.
 
