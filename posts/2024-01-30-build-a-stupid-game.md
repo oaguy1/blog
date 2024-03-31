@@ -95,7 +95,7 @@ Next was tiling the level. For this, I used a simple but clever auto-tiling meth
   new-map)
 ```
 
-For assets, I made tiles in [Aesprite](https://www.aseprite.org), which made the simple pixel art feel approachable. The trick I used to keep things manageable was to pick the Game Boy palette, which only has 3 distinct colors. This prevented decision fatigue trying to color things just right. The generated levels look pretty good, as far as I am concerned. My next steps are creating a player object and animating it with assets I have already created. I'll report back if there are any new or interesting things I learn in the process of making the game more complete. You can see the code for the game on my [GitHub repo here](https://github.com/oaguy1/mini-miner/tree/main). Below are some screenshots of mining levels I have created.
+For assets, I made tiles in [Aseprite](https://www.aseprite.org), which made the simple pixel art feel approachable. The trick I used to keep things manageable was to pick the Game Boy palette, which only has 3 distinct colors. This prevented decision fatigue trying to color things just right. The generated levels look pretty good, as far as I am concerned. My next steps are creating a player object and animating it with assets I have already created. I'll report back if there are any new or interesting things I learn in the process of making the game more complete. You can see the code for the game on my [GitHub repo here](https://github.com/oaguy1/mini-miner/tree/main). Below are some screenshots of mining levels I have created.
 
 <figure>
 ![screen shot 1](/assets/miniminer1.png)
