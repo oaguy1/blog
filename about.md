@@ -14,6 +14,8 @@ While in college, she studied Computer Science and graduated with honors from Cl
 
 When Lily isn't coding or writing, she spends time with her family in Brooklyn.
 
+Opinions are my own.
+
 ## Selected Projects
 
 * [Editor in Chief](https://github.com/editorinchiefoss/editor_in_chief)
