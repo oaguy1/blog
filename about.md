@@ -2,6 +2,9 @@
 title: About
 author: Lily Hughes-Robinson
 template: page
+type: page
+twitter: @oaguy1
+description: Short biography of Lily Hughes-Robinson
 ---
 
 Lily Hughes-Robinson is a highly accomplished software engineer skilled in full-stack web development and LLM-based application development. She has extensive experience spearheading product planning, software architecture, and owning critical applications.
